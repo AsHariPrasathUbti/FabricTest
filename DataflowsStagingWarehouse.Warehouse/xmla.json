@@ -25,7 +25,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"exec_requests_history\"]"
+        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\"]"
       },
       {
         "name": "SourceLineageTagType",
