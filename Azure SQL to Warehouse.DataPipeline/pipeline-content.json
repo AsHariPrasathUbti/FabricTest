@@ -1,0 +1,118 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy_gjo",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "AzureSqlSource",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "type": "AzureSqlTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "adf",
+                "table": "MappingDataFlow",
+                "database": "HariAzureDB"
+              },
+              "externalReferences": {
+                "connection": "5f561999-e687-4bd1-bf33-0ce4707b74a2"
+              }
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "tableOption": "autoCreate",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "TestWarehouse",
+                "properties": {
+                  "annotations": [],
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "endpoint": "2ybikadzh7yenkzxsnkoh7ua74-oxxqpk5rny2uroof24ehxht4jq.datawarehouse.fabric.microsoft.com",
+                    "artifactId": "c0218032-22f0-4ced-8929-4a1aafc36549",
+                    "workspaceId": "ab07ef75-6eb1-4835-b9c5-d7087b9e7c4c"
+                  }
+                }
+              },
+              "type": "DataWarehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "adf",
+                "table": "MappingDataFlow"
+              }
+            }
+          },
+          "enableStaging": true,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "EmpDate",
+                  "type": "DateTime",
+                  "physicalType": "date"
+                },
+                "sink": {
+                  "name": "EmpDate",
+                  "physicalType": "date"
+                }
+              },
+              {
+                "source": {
+                  "name": "Name",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "255"
+                },
+                "sink": {
+                  "name": "Name",
+                  "physicalType": "varchar",
+                  "length": "255"
+                }
+              },
+              {
+                "source": {
+                  "name": "age",
+                  "type": "Int32",
+                  "physicalType": "int"
+                },
+                "sink": {
+                  "name": "age",
+                  "physicalType": "int"
+                }
+              },
+              {
+                "source": {
+                  "name": "Filename",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "200"
+                },
+                "sink": {
+                  "name": "Filename",
+                  "physicalType": "varchar",
+                  "length": "200"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

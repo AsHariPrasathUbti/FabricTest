@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Azure SQL to Warehouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "148d0b03-6b17-4786-9382-f503760236c2"
+  }
+}

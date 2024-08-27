@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "MongoDB "
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "35a34eee-2e6f-449c-8962-d158992635c1"
+  }
+}
