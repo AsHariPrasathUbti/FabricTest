@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Finln Analytics Log Details"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3604c476-7c80-4318-a6ea-926ac55b8eb5"
+  }
+}

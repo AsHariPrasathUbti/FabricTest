@@ -1,0 +1,51 @@
+{
+  "config": "{\"version\":\"5.54\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU05\",\"version\":\"5.54\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU05",
+            "path": "BaseThemes/CY24SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "664ed48cb1834eb9d094",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"68fc7c34b858de054a75\",\"layouts\":[{\"id\":0,\"position\":{\"x\":606.5200422117624,\"y\":251.11576408315048,\"z\":1,\"width\":510.4648319067321,\"height\":251.11576408315048}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Geography.City\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Geography.GeographyID)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"Geography\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"City\"},\"Name\":\"Geography.City\",\"NativeReferenceName\":\"City\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"GeographyID\"}},\"Function\":0},\"Name\":\"Sum(Geography.GeographyID)\",\"NativeReferenceName\":\"Sum of GeographyID\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"GeographyID\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 251.12,
+          "width": 510.46,
+          "x": 606.52,
+          "y": 251.12,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"b831537478090450d132\",\"layouts\":[{\"id\":0,\"position\":{\"x\":53.516474312802565,\"y\":215.43811454128212,\"z\":0,\"width\":511.837049196804,\"height\":286.79341362501884,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(vw_PaymentAnalysis.PaymentsCount)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"vw_PaymentAnalysis\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"PaymentsCount\"}},\"Function\":0},\"Name\":\"Sum(vw_PaymentAnalysis.PaymentsCount)\",\"NativeReferenceName\":\"Sum of PaymentsCount\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"PaymentsCount\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 286.79,
+          "width": 511.84,
+          "x": 53.52,
+          "y": 215.44,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

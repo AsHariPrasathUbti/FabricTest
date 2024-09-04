@@ -1,0 +1,132 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SqlServerSource",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00",
+            "datasetSettings": {
+              "type": "SqlServerTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "DimPromotion",
+                "database": "ADFTrainingDB"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "308b17ae-54e9-481e-88e0-bdf6d08b6616"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Promotion"
+              },
+              "schema": [],
+              "linkedService": {
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "bfbc6b36-2f2c-467c-8ab4-f4e6b4b19461",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                },
+                "name": "LH_Insurance_Market"
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "ODataSource",
+            "httpRequestTimeout": "00:05:00",
+            "datasetSettings": {
+              "type": "ODataResource",
+              "typeProperties": {
+                "path": "Alphabetical_list_of_products"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "ac21d737-52e2-4625-9deb-ae7a16a1808b"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "tableOption": "autoCreate",
+            "datasetSettings": {
+              "type": "DataWarehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "list"
+              },
+              "schema": [],
+              "linkedService": {
+                "properties": {
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "artifactId": "c0218032-22f0-4ced-8929-4a1aafc36549",
+                    "endpoint": "2ybikadzh7yenkzxsnkoh7ua74-oxxqpk5rny2uroof24ehxht4jq.datawarehouse.fabric.microsoft.com",
+                    "workspaceId": "ab07ef75-6eb1-4835-b9c5-d7087b9e7c4c"
+                  },
+                  "annotations": []
+                },
+                "name": "TestWarehouse"
+              },
+              "annotations": []
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data2",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      }
+    ]
+  }
+}
