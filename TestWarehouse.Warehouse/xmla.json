@@ -77,7 +77,7 @@
         ],
         "partitions": [
           {
-            "name": "{{Dataset_Name}}",
+            "name": "{{Partition_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
@@ -276,7 +276,7 @@
         ],
         "partitions": [
           {
-            "name": "{{Dataset_Name}}",
+            "name": "{{Partition_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
@@ -465,7 +465,7 @@
         ],
         "partitions": [
           {
-            "name": "{{Dataset_Name}}",
+            "name": "{{Partition_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
@@ -494,10 +494,6 @@
       {
         "name": "__PBI_TimeIntelligenceEnabled",
         "value": "0"
-      },
-      {
-        "name": "PBI_QueryOrder",
-        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"Project\",\"list\",\"MappingDataFlow\"]"
       },
       {
         "name": "SourceLineageTagType",
